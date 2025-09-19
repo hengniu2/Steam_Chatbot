@@ -1,0 +1,23 @@
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover:not(:disabled) {
+  background: #005fa3;
+}
+
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: scale(0.97);
+}

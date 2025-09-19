@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Steam AI Chatbot</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <div class="popup-card">
+        <div class="header">
+          <div class="title">Steam AI Chatbot</div>
+          <div class="toggle">
+            <span class="toggle-label">Enable</span>
+            <label class="switch">
+              <input id="sai-enabled" type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="field">
+            <label for="sai-first">First name</label>
+            <input id="sai-first" type="text" placeholder="e.g., Alex" />
+          </div>
+          <div class="field">
+            <label for="sai-last">Last name</label>
+            <input id="sai-last" type="text" placeholder="e.g., Chen" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="sai-cooldown">Response cooldown (sec)</label>
+          <input id="sai-cooldown" type="number" min="1" step="1" value="20" />
+          <div class="hint">Used to avoid spamming replies in fast chats.</div>
+        </div>
+
+        <div id="sai-status" class="status">Idle</div>
+      </div>
+    </div>
+
+    <!-- keep as module if you already import helpers inside -->
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+{
+    "manifest_version": 3,
+    "name": "SteamCommunity AI Chatbot",
+    "version": "1.0.0",
+    "description": "AI Chatbot",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://api.openai.com/*",
+        "https://steamcommunity.com/chat"
+    ],
+    "background": {
+        "service_worker": "src/background/service-worker.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://steamcommunity.com/chat*"],
+            "js": ["src/content/loader.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "src/content/contentScript.js",
+                "src/common/storage.js",
+                "src/common/messaging.js",
+                "src/common/history.js",
+                "src/content/domSelectors.js"
+            ],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "action": {
+        "default_title": "SteamCommunity AI Chatbot",
+        "default_popup": "src/popup/popup.html"
+    },
+    "options_page": "src/options/options.html",
+    "icons": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+    }
+}
