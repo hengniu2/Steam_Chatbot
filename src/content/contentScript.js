@@ -6,9 +6,6 @@ import { steamSelectors } from "./domSelectors.js";
 export async function start() {
   console.log("[Steam AI Chatbot] Content script loaded.");
 
-  // Always show floating UI
-  // await createFloatingUI();
-
   // Only run chatbot logic on Steam chat
   if (location.hostname === "steamcommunity.com" && location.pathname.startsWith("/chat")) {
     console.log("[Steam AI Chatbot] Chatbot logic enabled.");
